@@ -1,0 +1,13 @@
+import = ["/home/josh/.config/alacritty/themes/themes/everforest_dark.toml"]    
+
+[font]
+#size = 17.0 # 15" 
+size = 20.0  # 24" 
+
+[font.normal]
+family = "Agave Nerd Font"
+style = "Bold"
+
+[window.padding]
+x = 10
+y = 10
