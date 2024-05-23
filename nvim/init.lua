@@ -24,7 +24,7 @@ vim.api.nvim_set_keymap("n", "<C-F>", ":Telescope live_grep<CR>", { noremap = tr
 vim.api.nvim_set_keymap("n", "<C-K>", ":call CocActionAsync('doHover')<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-J>", "<Plug>(coc-codeaction-cursor)", { noremap = true })
 
-vim.api.nvim_set_keymap("n", "<Leader>p", ":Neoformat<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-/>", ":Neoformat<CR>", { noremap = true })
 
 vim.cmd([[
 call plug#begin()
