@@ -1,3 +1,12 @@
 {
-  "angular.enable-strict-mode-prompt": false
+  "clangd.fallbackFlags": ["-std=c++20"],
+  "angular.enable-strict-mode-prompt": false,
+  "languageserver": {
+    "csharp": {
+      "command": "~/.dotnet/tools/csharp-ls",
+      "rootPatterns": ["*.sln", "git"],
+      "filetypes": ["cs", "csharp"]
+    }
+  },
+  "inlayHint.enable": false
 }
