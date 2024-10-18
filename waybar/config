@@ -4,7 +4,7 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": ["custom/spotify", "pulseaudio", "network", "tray"],
-    "modules-center": ["sway/workspaces"],
+    "modules-center": ["hyprland/workspaces"],
     "modules-right": ["custom/weather", "cpu", "memory", "battery", "clock" ],
     "keyboard-state": {
         "numlock": true,
@@ -22,7 +22,7 @@
             "deactivated": ""
         }
     },
-    "sway/workspaces": {
+    "hyprland/workspaces": {
         "persistent_workspaces": {
             "1": [],
             "2": [],
