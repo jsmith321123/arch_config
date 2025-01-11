@@ -1,13 +1,10 @@
-import = ["/home/josh/.config/alacritty/themes/themes/everforest_dark.toml"]    
+[general]
+import = ["/home/jsmith/.config/alacritty/themes/themes/autumn.toml"]    
 
 [font]
-#size = 17.0 # 15" 
-size = 20.0  # 24" 
+size = 14.0 # 15" 
+#size = 20.0  # 24" 
 
 [font.normal]
-family = "Agave Nerd Font"
-style = "Bold"
-
-[window.padding]
-x = 10
-y = 10
+family = "Hasklug Nerd Font"
+style = "Medium"

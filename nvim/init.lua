@@ -1,9 +1,13 @@
---vim.opt.colorcolumn="80"
-vim.opt.textwidth=80
+vim.opt.colorcolumn="100"
+vim.opt.textwidth=100
+vim.wo.number=true
 
--- vim.cmd([[
--- highlight ColorColumn ctermbg=8
--- ]])
+
+vim.cmd([[
+highlight ColorColumn ctermbg=8
+set signcolumn=yes
+set numberwidth=4
+]])
 
 vim.opt.tabstop=2
 vim.opt.shiftwidth=2
@@ -11,7 +15,7 @@ vim.opt.autoindent=true
 vim.opt.smartindent=true
 vim.opt.expandtab=true
 vim.opt.wrap=true
-
+vim.opt.termguicolors = true 
 
 vim.api.nvim_set_keymap("n", "<C-Left>", ":tabprev<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-Right>", ":tabnext<CR>", { noremap = true })
@@ -24,11 +28,7 @@ vim.api.nvim_set_keymap("n", "<C-F>", ":Telescope live_grep<CR>", { noremap = tr
 vim.api.nvim_set_keymap("n", "<C-K>", ":call CocActionAsync('doHover')<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-J>", "<Plug>(coc-codeaction-cursor)", { noremap = true })
 
-<<<<<<< HEAD
 vim.api.nvim_set_keymap("n", "<C-O>", ":Neoformat<CR>", { noremap = true })
-=======
-vim.api.nvim_set_keymap("n", "<Leader>p", ":Neoformat<CR>", { noremap = true })
->>>>>>> a1aab2d6616da3d15eba048c51e34481c9783504
 
 vim.cmd([[
 call plug#begin()
@@ -43,12 +43,16 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 
+Plug 'folke/tokyonight.nvim'
+
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 ]])
 
 vim.cmd([[
+colorscheme tokyonight-storm
+
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
