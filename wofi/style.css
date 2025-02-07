@@ -1,9 +1,31 @@
-#input {
-  font-size: 22px;
-  border-radius: 0;
-  padding: 5px;
+window {
+  background-color: transparent;
+  font-size: 20px;
+  font-family: "Hasklug Nerd Font"
 }
 
-#window {
-  font-size: 20px;
+#input {
+  font-size: 22px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #444444;
+  border: none;
+  margin-bottom: 10px;
+}
+
+#outer-box {
+  padding: 10px;
+  background-color: #444444;
+  border-radius: 15px;
+}
+
+#entry {
+  padding: 10px;
+}
+
+#entry:selected {
+  background-color: #777777;
+  border: none;
+  border-radius: 5px;
+  outline: none;
 }

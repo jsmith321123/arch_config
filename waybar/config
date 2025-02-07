@@ -3,9 +3,9 @@
     "height": 35, // Waybar height (to be removed for auto height)
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["custom/spotify", "pulseaudio", "network", "tray"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["custom/weather", "cpu", "memory", "battery", "clock" ],
+    "modules-left": ["hyprland/workspaces", "tray"],
+    "modules-center": ["custom/spotify"],
+    "modules-right": ["custom/weather", "cpu", "memory", "network", "pulseaudio", "battery", "clock" ],
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -41,15 +41,15 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%H:%M %d/%m/%Y}",
+        "format": "{:%H:%M %d/%m}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     },
     "cpu": {
-        "format": "CPU {usage}%",
+        "format": " {usage}%",
         "tooltip": false
     },
     "memory": {
-        "format": "RAM {}%"
+        "format": " {}%"
     },
     "battery": {
         "states": {
@@ -68,16 +68,16 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "WIFI {signalStrength}%",
-        "format-ethernet": "ETH",
+        "format-ethernet": "󰈀",
         "tooltip-format": "{ifname} via {gwaddr}",
-        "format-linked": "ETH X",
+        "format-linked": "ETH",
         "format-disconnected": "DIS",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "VOL {volume}",
-        "format-bluetooth": "VOL {volume} (BT)",
+        "scroll-step": 5, // %, can be a float
+        "format": "{volume} {icon} ",
+        "format-bluetooth": "{icon} {volume} (BT)",
         "format-bluetooth-muted": "MUTE (BT)",
         "format-muted": "MUTE",
         "format-source": "{volume}% ",
