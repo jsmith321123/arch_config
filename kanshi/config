@@ -1,0 +1,12 @@
+profile docked {
+    output "DP-2" enable position 0,0        
+    output "DP-1" enable position 2560,0        
+    output "eDP-1" disable
+    exec bash ~/.config/hypr/setup_workspaces_docked.sh
+}
+
+profile undocked {
+    output "eDP-1" enable position 0,0 scale 1.8
+    exec bash ~/.config/hypr/setup_workspaces_undocked.sh
+}
+

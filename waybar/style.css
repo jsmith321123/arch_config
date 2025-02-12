@@ -15,7 +15,6 @@ window#waybar {
 }
 
 .modules-left, .modules-right, .modules-center {
-    padding: 0 10px;
 }
 
 window#waybar.hidden {
@@ -57,8 +56,10 @@ button:hover {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #cccccc;
+    color: #ffffff;
     font-size: 22px;
+    border-bottom: solid 4px transparent;
+    border-top: solid 4px transparent;
 }
 
 #workspaces button.empty {
@@ -66,8 +67,9 @@ button:hover {
 }
 
 #workspaces button.active {
-    color: #ffffff;
     font-weight: bold;
+    /* background-color: rgba(255, 255, 255, 0.15); */
+    border-bottom: solid 4px white;
 }
 
 #workspaces button:hover {
