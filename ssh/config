@@ -1,0 +1,13 @@
+Host dgdev_strapi_vm
+    User dgdev
+    HostName 172.187.186.81
+
+Host kaizen-prod
+    User josh
+    HostName 172.16.75.12
+    IdentityFile ~/keys-n-configs/kaizen/kaizensshprivatekey3-josh.pem
+
+Host kaizen-staging
+    User josh
+    HostName 172.16.75.13
+    IdentityFile ~/keys-n-configs/kaizen/kaizensshprivatekey3-josh.pem
