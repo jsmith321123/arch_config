@@ -9,12 +9,12 @@ set signcolumn=yes
 set numberwidth=4
 ]])
 
-vim.opt.tabstop=2
-vim.opt.shiftwidth=2
+vim.opt.tabstop=4
+vim.opt.shiftwidth=4
 vim.opt.autoindent=true
 vim.opt.smartindent=true
 vim.opt.expandtab=true
-vim.opt.wrap=true
+vim.opt.wrap=false
 vim.opt.termguicolors = true 
 
 vim.api.nvim_set_keymap("n", "<C-Left>", ":tabprev<CR>", { noremap = true })
@@ -68,7 +68,27 @@ endfunction
 ]])
 
 require('lualine').setup {
-    options = { theme = 'modus-vivendi' }
+    options = { 
+        theme = 'onedark', 
+        section_separators = '',
+        component_separators = '', 
+    },
+    sections = {
+        lualine_a = {'mode'},
+        lualine_b = {},
+        lualine_c = {'filename'},
+        lualine_x = {'encoding', 'fileformat', 'filetype'},
+        lualine_y = {'progress'},
+        lualine_z = {'location'}
+    },
+    inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {'filename'},
+        lualine_x = {'location'},
+        lualine_y = {},
+        lualine_z = {}
+    },
 }
 
 require'nvim-treesitter.configs'.setup {
