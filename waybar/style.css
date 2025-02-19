@@ -133,6 +133,17 @@ button:hover {
     padding: 0 10px;
 }
 
+#custom-power {
+    color: #fc4747;
+    padding: 0 10.5px 0 7px;
+}
+
+#custom-power:hover {
+    color: #222222;
+    background-color: #fc4747;
+    padding: 0 10px 0 7px;
+}
+
 @keyframes blink {
     to {
         background-color: #ffffff;
@@ -178,6 +189,7 @@ label:focus {
 
 #tray {
     padding-top: 2px;
+    margin-right: 5px;
 }
 
 #tray > .passive {
@@ -192,6 +204,7 @@ label:focus {
 #idle_inhibitor {
     background-color: #2d3436;
     padding-right: 13px;
+    margin-right: 0;
 }
 
 #idle_inhibitor.activated {
