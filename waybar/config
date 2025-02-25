@@ -22,7 +22,7 @@
         }
     },
     "hyprland/workspaces": {
-        "all-outputs": false,
+        "all-outputs": true,
         "persistent_workspaces": {
         }
     },
@@ -31,7 +31,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%a %H:%M %d/%m}",
+        "format": "{:%a %d/%m %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     },
     "cpu": {
@@ -98,8 +98,9 @@
         "return-type": "json"
     },
     "custom/power": {
-	"format": "",
-	"on-click": "wlogout"
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip-format": ""
     }
 }
 
