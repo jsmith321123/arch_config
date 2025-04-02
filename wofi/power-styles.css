@@ -1,0 +1,28 @@
+window {
+  background-color: transparent;
+  font-size: 20px;
+  font-family: "Hasklug Nerd Font";
+  font-weight: bold;
+  text-align: center;
+}
+
+#input {
+	display: none;
+	margin: -10000px 5px;
+}
+
+#outer-box {
+  padding: 10px;
+  background-color: #222222;
+}
+
+#entry {
+  padding: 10px;
+}
+
+#entry:selected {
+  background-color: #444444;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
