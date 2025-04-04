@@ -6,8 +6,6 @@ set $super Mod4
 set $monitorl HDMI-A-1
 set $monitorr DP-1
 
-exec ./~/.config/sway/start-bar.sh
-
 exec swaync
 bindsym $mod+Shift+n exec swaync-client -t -sw
 
@@ -15,9 +13,9 @@ bindsym $mod+Shift+n exec swaync-client -t -sw
 output $monitorl mode 3840x2160 pos 0 0 bg ~/.config/wallpapers/wallpaper2.jpg stretch scale 1.5
 output $monitorr mode 3840x2160 pos 2560 0 bg ~/.config/wallpapers/wallpaper2.jpg stretch scale 1.5
 
-exec ulauncher --hide-window 1
+for_window [all] allow_tearing yes
 
-seat seat0 xcursor_theme Breeze 24
+seat seat0 xcursor_theme Bibata-Modern-Classic 24
 
 font pango:monospace 8
 
@@ -33,6 +31,8 @@ tiling_drag enable
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+bindsym $mod+B exec chromium
+bindsym $mod+M exec killall wofi || /home/jsmith/.config/wofi/wofi-power.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -59,17 +59,16 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+b split h
+bindsym $mod+comma split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+period split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -167,6 +166,10 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+input 1133:16500:Logitech_G305 {
+	accel_profile "flat"
+}
+
 input type:touchpad {
     	tap enabled
     	natural_scroll enabled
@@ -193,10 +196,10 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+XF86AudioRaiseVolume exec playerctl volume 0.05+
 bindsym $mod+XF86AudioLowerVolume exec playerctl volume 0.05-
 
-bindsym $mod+Home exec swaylock -i ~/.config/wallpapers/wallpaper.png
+bindsym $mod+Home exec swaylock -i /home/jsmith/.config/wallpapers/wallpaper.jpg
 
-default_border pixel 4
-default_floating_border pixel 4
+default_border pixel 2
+default_floating_border pixel 2
 
 client.focused #000000 #000000 #000000 #66b3ff #ffffff
 client.unfocused #000000 #000000 #000000 #999999 #666666
@@ -210,7 +213,6 @@ gaps outer 0
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	status_command ~/.config/sway/start-bar.sh
 	mode invisible
 	tray_output none
 }
