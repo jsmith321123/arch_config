@@ -2,9 +2,9 @@
     "layer": "top", // Waybar at top layer
     "height": 35, // Waybar height (to be removed for auto height)
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-center": [],
-    "modules-right": ["custom/weather", "cpu", "memory", "battery", "pulseaudio", "clock", "tray", "idle_inhibitor", "custom/power" ],
+    "modules-left": ["network", "cpu", "memory", "battery", "pulseaudio"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["tray", "clock", "idle_inhibitor", "custom/power" ],
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -24,7 +24,7 @@
     "hyprland/workspaces": {
         "all-outputs": true,
         "persistent_workspaces": {
-        }
+        },
     },
     "tray": {
         "icon-size": 18,
@@ -99,7 +99,7 @@
     },
     "custom/power": {
         "format": "",
-        "on-click": "wlogout",
+        "on-click": "bash /home/jsmith/.config/wofi/wofi-power.sh",
         "tooltip-format": ""
     }
 }

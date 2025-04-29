@@ -104,6 +104,10 @@ button:hover {
     padding: 0 5px;
 }
 
+#cpu {
+    margin-left: 5px;
+}
+
 #window,
 #workspaces {
     margin: 0 4px;
