@@ -1,3 +1,5 @@
+#!/bin/bash
+
 hyprctl dispatch moveworkspacetomonitor 1 DP-2
 hyprctl dispatch moveworkspacetomonitor 2 DP-2
 hyprctl dispatch moveworkspacetomonitor 3 DP-2

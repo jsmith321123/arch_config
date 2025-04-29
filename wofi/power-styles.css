@@ -14,6 +14,7 @@ window {
 #outer-box {
   padding: 10px;
   background-color: #222222;
+  border-radius: 20px;
 }
 
 #entry {
