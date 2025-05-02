@@ -2,9 +2,9 @@
     "layer": "top", // Waybar at top layer
     "height": 35, // Waybar height (to be removed for auto height)
     // Choose the order of the modules
-    "modules-left": ["custom/spotify", "cpu", "memory", "battery", "pulseaudio"],
+    "modules-left": ["custom/spotify", "custom/weather","cpu", "memory", "battery", "pulseaudio"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["custom/weather", "tray", "clock", "custom/email", "network", "custom/power", "idle_inhibitor"],
+    "modules-right": ["tray", "clock", "custom/email", "network", "custom/power", "idle_inhibitor"],
     "output": ["DP-2", "eDP-1"],
     "keyboard-state": {
         "numlock": true,

@@ -105,7 +105,21 @@ button:hover {
 }
 
 #cpu {
-    margin-left: 5px;
+    border-bottom: solid 4px white; 
+    border-top: solid 4px transparent;
+    padding: 0 0 0 10px;
+}
+
+#memory {
+    border-bottom: solid 4px white; 
+    border-top: solid 4px transparent;
+    padding: 0 10px 0 8px;
+}
+
+#pulseaudio {
+    border-bottom: solid 4px white; 
+    border-top: solid 4px transparent;
+    padding: 0 10px;
 }
 
 #window,
@@ -121,12 +135,17 @@ button:hover {
     padding-right: 10px;
 }
 
+#battery {
+    border-bottom: solid 4px lightgray; 
+    border-top: solid 4px transparent;
+    padding: 0 10px;
+}
+
 #battery.charging, #battery.plugged {
     color: #ffffff;
     /*background-color: #26A65B;*/
     border-bottom: solid 4px #26A65B; 
     border-top: solid 4px transparent;
-    padding: 0 10px;
 }
 
 #custom-weather {
