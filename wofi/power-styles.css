@@ -1,9 +1,9 @@
 window {
-  background-color: transparent;
   font-size: 20px;
   font-family: "Hasklug Nerd Font";
   font-weight: bold;
   text-align: center;
+  border-radius: 20px;
 }
 
 #input {
@@ -13,7 +13,6 @@ window {
 
 #outer-box {
   padding: 10px;
-  background-color: #222222;
   border-radius: 20px;
 }
 
@@ -22,7 +21,6 @@ window {
 }
 
 #entry:selected {
-  background-color: #444444;
   border: none;
   border-radius: 5px;
   outline: none;

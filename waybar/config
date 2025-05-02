@@ -2,9 +2,10 @@
     "layer": "top", // Waybar at top layer
     "height": 35, // Waybar height (to be removed for auto height)
     // Choose the order of the modules
-    "modules-left": ["network", "cpu", "memory", "battery", "pulseaudio"],
+    "modules-left": ["network", "cpu", "memory", "battery", "pulseaudio", "custom/spotify"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray", "clock", "idle_inhibitor", "custom/power" ],
+    "modules-right": ["custom/weather", "tray", "clock", "idle_inhibitor", "custom/power" ],
+    "output": ["DP-2", "eDP-1"],
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -88,12 +89,12 @@
         "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
         "format": "{}",
         "return-type": "json",
-        "on-click": "playerctl play-pause",
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous"
+        "on-click": "hyprctl dispatch togglespecialworkspace spotify",
+        "max-length": 25
     },
     "custom/weather": {
         "exec": "/usr/bin/python3 ~/.config/waybar/weather.py",
+        "on-click": "xdg-open 'https://weather.metoffice.gov.uk/forecast/gcpu8321k#?nearestTo=Hampton%20Hill%20(Richmond%20upon%20Thames)&date=2025-05-02'",
 	"format": "{}",
         "return-type": "json"
     },
