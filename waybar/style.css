@@ -177,6 +177,21 @@ label:focus {
     padding: 0 10px;
 }
 
+#custom-email, #network {
+    padding: 0 14px 0 10px;
+    transition: all 400ms ease;
+    background-color: #2d3436;
+}
+
+#network {
+    padding: 0 16px 0 10px;
+}
+
+#custom-email:hover, #network:hover {
+    background-color: white;
+    color: #2d3436;
+}
+
 #custom-media.custom-vlc {
     background-color: #ffa000;
 }

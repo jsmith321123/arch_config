@@ -2,9 +2,9 @@
     "layer": "top", // Waybar at top layer
     "height": 35, // Waybar height (to be removed for auto height)
     // Choose the order of the modules
-    "modules-left": ["network", "cpu", "memory", "battery", "pulseaudio", "custom/spotify"],
+    "modules-left": ["custom/spotify", "cpu", "memory", "battery", "pulseaudio"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["custom/weather", "tray", "clock", "idle_inhibitor", "custom/power" ],
+    "modules-right": ["custom/weather", "tray", "clock", "custom/email", "network", "custom/power", "idle_inhibitor"],
     "output": ["DP-2", "eDP-1"],
     "keyboard-state": {
         "numlock": true,
@@ -95,8 +95,12 @@
     "custom/weather": {
         "exec": "/usr/bin/python3 ~/.config/waybar/weather.py",
         "on-click": "xdg-open 'https://weather.metoffice.gov.uk/forecast/gcpu8321k#?nearestTo=Hampton%20Hill%20(Richmond%20upon%20Thames)&date=2025-05-02'",
-	"format": "{}",
+        "format": "{}",
         "return-type": "json"
+    },
+    "custom/email": {
+        "format": "󰇮",
+        "on-click": "hyprctl dispatch togglespecialworkspace email",
     },
     "custom/power": {
         "format": "",
