@@ -136,7 +136,7 @@ button:hover {
 }
 
 #battery {
-    border-bottom: solid 4px lightgray; 
+    border-bottom: solid 4px gray; 
     border-top: solid 4px transparent;
     padding: 0 10px;
 }
