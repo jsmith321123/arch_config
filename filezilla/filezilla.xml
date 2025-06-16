@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<FileZilla3 version="3.68.1" platform="*nix">
+<FileZilla3 version="3.69.1" platform="*nix">
 	<Settings>
 		<Setting name="Use Pasv mode">1</Setting>
 		<Setting name="Limit local ports">0</Setting>
@@ -105,7 +105,6 @@
 		<Setting name="Filteredit window size" />
 		<Setting name="Enable invalid char filter">1</Setting>
 		<Setting name="Invalid char replace">_</Setting>
-		<Setting name="Already connected choice">0</Setting>
 		<Setting name="Edit status dialog size" />
 		<Setting name="Display current speed">0</Setting>
 		<Setting name="Toolbar hidden">0</Setting>
@@ -117,37 +116,38 @@
 		<Setting name="Drag and Drop disabled">0</Setting>
 		<Setting name="Disable update footer">0</Setting>
 		<Setting name="Highest shown overlay id">0</Setting>
-		<Setting name="Greeting version">3.68.1</Setting>
-		<Setting name="Site Manager position">0 0 0 1096 632 </Setting>
-		<Setting name="Sitemanager last selected">0/Kaizen Production</Setting>
 		<Setting name="Prompt password save">0</Setting>
 		<Setting name="Queue column widths">180 60 180 80 60 150</Setting>
-		<Setting name="Local filelist colwidths">170 80 120 120</Setting>
 		<Setting name="Local filelist shown columns">1111</Setting>
 		<Setting name="Remote filelist shown columns">111111</Setting>
 		<Setting name="Local filelist column order">0,1,2,3</Setting>
 		<Setting name="Remote filelist column order">0,1,2,3,4,5</Setting>
 		<Setting name="Local filelist sortorder">0 0</Setting>
-		<Setting name="Remote filelist sortorder">0 0</Setting>
-		<Setting name="Remote filelist colwidths">267 75 80 100 80 85</Setting>
-		<Setting name="Window position and size">1 0 0 1280 609 </Setting>
-		<Setting name="Splitter positions (v2)">296 -130 500000000 100 100 500000000</Setting>
+		<Setting name="Greeting version">3.69.1</Setting>
+		<Setting name="Site Manager position">0 0 0 1397 632 </Setting>
+		<Setting name="Already connected choice">1</Setting>
+		<Setting name="Sitemanager last selected">0/Dgdev VM</Setting>
+		<Setting name="Local filelist colwidths">170 80 120 182</Setting>
+		<Setting name="Remote filelist colwidths">267 75 80 141 80 85</Setting>
+		<Setting name="Splitter positions (v2)">296 -130 500000000 282 278 500000000</Setting>
+		<Setting name="Remote filelist sortorder">0 3</Setting>
+		<Setting name="Window position and size">1 0 0 1279 1136 </Setting>
 		<Setting name="Tab data" sensitive="1">
 			<Tabs>
-				<Tab selected="1">
-					<Host>172.16.75.13</Host>
+				<Tab connected="1" selected="1">
+					<Host>172.187.186.81</Host>
 					<Port>22</Port>
 					<Protocol>1</Protocol>
 					<Type>0</Type>
-					<User>josh</User>
-					<Keyfile>/home/jsmith/keys-n-configs/kaizen/kaizensshprivatekey3-josh.ppk</Keyfile>
+					<User>dgdev</User>
+					<Keyfile>/home/jsmith/OneDrive/keys-n-configs/dgdev/dgdev-strapi-test.ppk</Keyfile>
 					<Logontype>5</Logontype>
 					<EncodingType>Auto</EncodingType>
 					<BypassProxy>0</BypassProxy>
-					<Name>Kaizen Staging</Name>
-					<Site>0/Kaizen Staging</Site>
-					<RemotePath>1 0 3 www 29 dev-corp-cms.kaizengaming.com 12 dev-corp-cms</RemotePath>
-					<LocalPath>/home/jsmith/</LocalPath>
+					<Name>Dgdev VM</Name>
+					<Site>0/Dgdev VM</Site>
+					<RemotePath>1 0 4 home 5 dgdev 3 www 23 garners-funerals-strapi 4 dist</RemotePath>
+					<LocalPath>/home/jsmith/gits/dgdev/garners-funerals-strapi/dist/</LocalPath>
 				</Tab>
 			</Tabs>
 		</Setting>
