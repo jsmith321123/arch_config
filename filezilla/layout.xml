@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<FileZilla3 version="3.68.1" platform="*nix">
-	<Layout Builddate="2024-11-04" Buildtime="00:00:00">
+<FileZilla3 version="3.69.1" platform="*nix">
+	<Layout Builddate="2025-04-24" Buildtime="00:00:00">
 		<Resources />
-		<Language id="en_GB" date="1730678400">
-			<Font font="Cantarell 11" width="834" height="19" />
+		<Language id="en_GB" date="1745452800">
+			<Font font="Noto Sans 10" width="792" height="19" />
 		</Language>
 	</Layout>
 </FileZilla3>

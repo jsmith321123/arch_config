@@ -1,7 +1,7 @@
-vim.opt.colorcolumn="100"
-vim.opt.textwidth=100
+vim.opt.colorcolumn="81"
+vim.opt.textwidth=80
 vim.wo.number=true
-
+vim.wo.relativenumber=true
 
 vim.cmd([[
 highlight ColorColumn ctermbg=8
@@ -9,8 +9,8 @@ set signcolumn=yes
 set numberwidth=4
 ]])
 
-vim.opt.tabstop=4
-vim.opt.shiftwidth=4
+vim.opt.tabstop=2
+vim.opt.shiftwidth=2
 vim.opt.autoindent=true
 vim.opt.smartindent=true
 vim.opt.expandtab=true
@@ -36,7 +36,7 @@ call plug#begin()
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 Plug 'prettier/vim-prettier'
-Plug 'sbdchd/neoformat'
+Plug 'stevearc/conform.nvim'
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
@@ -133,3 +133,44 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+require("conform").setup({
+  formatters = {
+    csharpier = function()
+      local useDotnet = not vim.fn.executable("csharpier")
+
+      local command = useDotnet and "dotnet csharpier" or "csharpier"
+
+      local version_out = vim.fn.system(command .. " --version")
+
+      --NOTE: system command returns the command as the first line of the result, need to get the version number on the final line
+      local version_result = version_out[#version_out]
+      local major_version = tonumber((version_out or ""):match("^(%d+)")) or 0
+      local is_new = major_version >= 1
+
+      local args = is_new and { "format", "$FILENAME" } or { "--write-stdout" }
+
+      return {
+          command = command,
+          args = args,
+          stdin = not is_new,
+          require_cwd = false,
+      }
+    end,
+  },
+  formatters_by_ft = {
+    cs = { 'csharpier' },
+    typescript = { "prettier", stop_after_first = true },
+    typescriptreact = { "prettier", stop_after_first = true },
+    javascript = { "prettier", stop_after_first = true },
+    html = { "prettier", stop_after_first = true },
+    scss = { "prettier", stop_after_first = true },
+    css = { "prettier", stop_after_first = true },
+  },
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end,
+})
