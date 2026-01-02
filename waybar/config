@@ -4,7 +4,7 @@
     // Choose the order of the modules
     "modules-left": ["custom/spotify", "custom/weather", "battery", "pulseaudio"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray", "clock", "custom/email", "network", "custom/power", "idle_inhibitor"],
+    "modules-right": ["tray", "clock", "custom/email", "network", "custom/power", "custom/power-profiles", "idle_inhibitor"],
     "output": ["DP-2", "eDP-1"],
     "keyboard-state": {
         "numlock": true,
@@ -103,6 +103,11 @@
         "on-click": "hyprctl dispatch togglespecialworkspace email",
     },
     "custom/power": {
+        "format": "",
+        "on-click": "bash /home/jsmith/.config/wofi/wofi-power.sh",
+        "tooltip-format": ""
+    },
+    "custom/power-profiles": {
         "format": "",
         "on-click": "bash /home/jsmith/.config/wofi/wofi-power.sh",
         "tooltip-format": ""
