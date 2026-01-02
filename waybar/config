@@ -1,11 +1,13 @@
 {
     "layer": "top", // Waybar at top layer
-    "height": 35, // Waybar height (to be removed for auto height)
+    "height": 40, // Waybar height (to be removed for auto height)
+    "margin": "8 8 0 8",
     // Choose the order of the modules
-    "modules-left": ["custom/spotify", "custom/weather", "battery", "pulseaudio"],
+    //"modules-left": ["custom/spotify", "custom/weather", "battery", "pulseaudio"],
+    "modules-left": ["custom/launcher", "battery", "pulseaudio", "custom/spotify"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray", "clock", "custom/email", "network", "custom/power", "custom/power-profiles", "idle_inhibitor"],
-    "output": ["DP-2", "eDP-1"],
+    "modules-right": ["tray", "clock", "network", "custom/power-profiles", "custom/power", "idle_inhibitor"],
+    // "output": ["DP-2", "eDP-1"],
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -48,8 +50,8 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon} ",
-        "format-charging": "{capacity}%+ {icon} ",
+        "format": "{icon} {capacity}%",
+        "format-charging": "{icon} {capacity}%+",
         "format-plugged": "{icon} {capacity}%+",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -68,8 +70,8 @@
     },
     "pulseaudio": {
         "scroll-step": 5, // %, can be a float
-        "format": "{volume} {icon} ",
-        "format-bluetooth": "{icon} {volume} (BT)",
+        "format": "{icon}  {volume}",
+        "format-bluetooth": "{icon}  {volume} (BT)",
         "format-bluetooth-muted": "MUTE (BT)",
         "format-muted": "MUTE",
         "format-source": "{volume}% ",
@@ -89,7 +91,7 @@
         "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
         "format": "{}",
         "return-type": "json",
-        "on-click": "hyprctl dispatch togglespecialworkspace spotify",
+        "on-click": "playerctl play-pause",
         "max-length": 25
     },
     "custom/weather": {
@@ -108,9 +110,16 @@
         "tooltip-format": ""
     },
     "custom/power-profiles": {
-        "format": "",
-        "on-click": "bash /home/jsmith/.config/wofi/wofi-power.sh",
+	"exec": "~/.config/waybar/get-power-profile.sh",
+        "format": "{}",
+	"interval": 5,
+        "on-click": "bash /home/jsmith/.config/wofi/wofi-power-profiles.sh",
         "tooltip-format": ""
-    }
+    },
+    "custom/launcher": {
+	"on-click": "wofi --show drun",
+        "format": "󰀻",
+        "tooltip-format": ""
+    },
 }
 
