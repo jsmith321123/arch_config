@@ -1,17 +1,18 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "Hasklug Nerd Font";
-    font-size: 16px;
+    font-size: 18px;
 }
 
 window#waybar {
-    background-color: #222222;
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     transition-property: background-color;
     transition-duration: .5s;
     padding: 0;
     padding-top: 2px;
     font-weight: bold;
+    border-radius: 8px;
 }
 
 .modules-left, .modules-right, .modules-center {
@@ -116,15 +117,9 @@ button:hover {
     padding: 0 10px 0 8px;
 }
 
-#pulseaudio {
-    border-bottom: solid 4px white; 
-    border-top: solid 4px transparent;
-    padding: 0 10px;
-}
-
 #window,
 #workspaces {
-    margin: 0 4px;
+    margin: 0 5px;
 }
 
 #workspaces {
@@ -135,17 +130,9 @@ button:hover {
     padding-right: 10px;
 }
 
-#battery {
-    border-bottom: solid 4px gray; 
-    border-top: solid 4px transparent;
-    padding: 0 10px;
-}
-
 #battery.charging, #battery.plugged {
     color: #ffffff;
     /*background-color: #26A65B;*/
-    border-bottom: solid 4px #26A65B; 
-    border-top: solid 4px transparent;
 }
 
 #custom-weather {
@@ -158,13 +145,23 @@ button:hover {
 
 #custom-power {
     color: #fc4747;
-    padding: 0 10.5px 0 7px;
+    padding: 0 11px 0 7px;
 }
 
 #custom-power:hover {
     color: #222222;
     background-color: #fc4747;
-    padding: 0 10px 0 7px;
+    padding: 0 11px 0 7px;
+}
+
+#custom-power-profiles {
+    padding: 0 7px 0 7px;
+}
+
+#custom-power-profiles:hover {
+    color: #222222;
+    background-color: #ffffff;
+    padding: 0 7px 0 7px;
 }
 
 @keyframes blink {
@@ -191,24 +188,17 @@ label:focus {
 }
 
 #custom-spotify {
-    border-bottom: solid 4px #66cc99;
-    border-top: solid 4px transparent;
     padding: 0 10px;
 }
 
-#custom-email, #network {
+#custom-email {
     padding: 0 14px 0 10px;
     transition: all 400ms ease;
-    background-color: #2d3436;
+    background-color: #222222;
 }
 
 #network {
-    padding: 0 16px 0 10px;
-}
-
-#custom-email:hover, #network:hover {
-    background-color: white;
-    color: #2d3436;
+    padding: 0 10px 0 3px;
 }
 
 #custom-media.custom-vlc {
@@ -240,9 +230,24 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    background-color: #222222;
     padding-right: 13px;
     margin-right: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+#custom-launcher {
+    background-color: #222222;
+    padding: 0 7px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    margin-right: 5px;
+}
+
+#custom-launcher:hover {
+    color: #222222;
+    background-color: white;
 }
 
 #idle_inhibitor.activated {
