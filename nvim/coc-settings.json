@@ -8,6 +8,5 @@
       "filetypes": ["cs", "csharp"]
     }
   },
-  "inlayHint.enable": false,
-  "javascript.autoClosingTags": false
+  "inlayHint.enable": false
 }

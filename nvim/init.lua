@@ -1,7 +1,23 @@
+vim.cmd([[
+call plug#begin()
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
+Plug 'neovim/nvim-lspconfig'
+
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
+
+Plug 'folke/tokyonight.nvim'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+call plug#end()
+]])
+
 vim.opt.colorcolumn="81"
-vim.opt.textwidth=80
-vim.wo.number=true
-vim.wo.relativenumber=true
+vim.wo.number=false
+vim.wo.relativenumber=false
 
 vim.cmd([[
 highlight ColorColumn ctermbg=8
@@ -17,83 +33,45 @@ vim.opt.expandtab=true
 vim.opt.wrap=false
 vim.opt.termguicolors = true 
 
-vim.api.nvim_set_keymap("n", "<C-Left>", ":tabprev<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-Right>", ":tabnext<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-Up>", ":tabnew<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-Down>", ":tabclose<CR>", { noremap = true })
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('angularls')
+vim.lsp.enable('csharp_ls')
+vim.lsp.enable('clangd')
 
 vim.api.nvim_set_keymap("n", "<C-P>", ":Telescope find_files<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-F>", ":Telescope live_grep<CR>", { noremap = true })
 
-vim.api.nvim_set_keymap("n", "<C-K>", ":call CocActionAsync('doHover')<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-J>", "<Plug>(coc-codeaction-cursor)", { noremap = true })
-
-vim.api.nvim_set_keymap("n", "<C-O>", ":Neoformat<CR>", { noremap = true })
-
 vim.cmd([[
-call plug#begin()
-
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
-Plug 'prettier/vim-prettier'
-Plug 'stevearc/conform.nvim'
-
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'nvim-tree/nvim-web-devicons'
-
-Plug 'folke/tokyonight.nvim'
-
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-call plug#end()
+  colorscheme tokyonight-storm
 ]])
 
-vim.cmd([[
-colorscheme tokyonight-storm
-
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-]])
-
-require('lualine').setup {
-    options = { 
-        theme = 'onedark', 
-        section_separators = '',
-        component_separators = '', 
-    },
-    sections = {
-        lualine_a = {'mode'},
-        lualine_b = {},
-        lualine_c = {'filename'},
-        lualine_x = {'encoding', 'fileformat', 'filetype'},
-        lualine_y = {'progress'},
-        lualine_z = {'location'}
-    },
-    inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = {'filename'},
-        lualine_x = {'location'},
-        lualine_y = {},
-        lualine_z = {}
-    },
-}
+-- require('lualine').setup {
+--     options = { 
+--         theme = 'onedark', 
+--         section_separators = '',
+--         component_separators = '', 
+--     },
+--     sections = {
+--         lualine_a = {'mode'},
+--         lualine_b = {},
+--         lualine_c = {'filename'},
+--         lualine_x = {'encoding', 'fileformat', 'filetype'},
+--         lualine_y = {'progress'},
+--         lualine_z = {'location'}
+--     },
+--     inactive_sections = {
+--         lualine_a = {},
+--         lualine_b = {},
+--         lualine_c = {'filename'},
+--         lualine_x = {'location'},
+--         lualine_y = {},
+--         lualine_z = {}
+--     },
+-- }
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-  ensure_installed = { "c_sharp", "typescript", "html" },
+  ensure_installed = { "c_sharp", "typescript", "html", "c" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -133,44 +111,50 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
-require("conform").setup({
-  formatters = {
-    csharpier = function()
-      local useDotnet = not vim.fn.executable("csharpier")
 
-      local command = useDotnet and "dotnet csharpier" or "csharpier"
+-- 
+-- LSP COMPLETION
+--
 
-      local version_out = vim.fn.system(command .. " --version")
+vim.opt.completeopt = {'menu', 'menuone', 'noselect', 'noinsert'}
+vim.opt.shortmess:append('c')
 
-      --NOTE: system command returns the command as the first line of the result, need to get the version number on the final line
-      local version_result = version_out[#version_out]
-      local major_version = tonumber((version_out or ""):match("^(%d+)")) or 0
-      local is_new = major_version >= 1
+local function tab_complete()
+  if vim.fn.pumvisible() == 1 then
+    -- navigate to next item in completion menu
+    return '<Down>'
+  end
 
-      local args = is_new and { "format", "$FILENAME" } or { "--write-stdout" }
+  local c = vim.fn.col('.') - 1
+  local is_whitespace = c == 0 or vim.fn.getline('.'):sub(c, c):match('%s')
 
-      return {
-          command = command,
-          args = args,
-          stdin = not is_new,
-          require_cwd = false,
-      }
-    end,
-  },
-  formatters_by_ft = {
-    cs = { 'csharpier' },
-    typescript = { "prettier", stop_after_first = true },
-    typescriptreact = { "prettier", stop_after_first = true },
-    javascript = { "prettier", stop_after_first = true },
-    html = { "prettier", stop_after_first = true },
-    scss = { "prettier", stop_after_first = true },
-    css = { "prettier", stop_after_first = true },
-  },
-})
+  if is_whitespace then
+    -- insert tab
+    return '<Tab>'
+  end
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function(args)
-    require("conform").format({ bufnr = args.buf })
-  end,
-})
+  local lsp_completion = vim.bo.omnifunc == 'v:lua.vim.lsp.omnifunc'
+
+  if lsp_completion then
+    -- trigger lsp code completion
+    return '<C-x><C-o>'
+  end
+
+  -- suggest words in current buffer
+  return '<C-x><C-n>'
+end
+
+local function tab_prev()
+  if vim.fn.pumvisible() == 1 then
+    -- navigate to previous item in completion menu
+    return '<Up>'
+  end
+
+  -- insert tab
+  return '<Tab>'
+end
+
+vim.keymap.set('i', '<Tab>', tab_complete, {expr = true})
+vim.keymap.set('i', '<S-Tab>', tab_prev, {expr = true})
+
+
