@@ -4,11 +4,11 @@ current=$(powerprofilesctl list | grep -E "^\*.\S" | sed 's/^..//' | sed 's/.$//
 
 case $current in
 	power-saver)
-		printf 's';;
+		printf 'S';;
 	balanced)
-		printf 'b';;
+		printf 'B';;
 	performance)
-		printf 'p';;
+		printf 'P';;
 	*)
-		printf $current;;
+		printf "nothing";;
 esac

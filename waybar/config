@@ -1,12 +1,12 @@
 {
-    "layer": "top", // Waybar at top layer
+    "layer": "bottom", // Waybar at top layer
     "height": 40, // Waybar height (to be removed for auto height)
     "margin": "8 8 0 8",
     // Choose the order of the modules
     //"modules-left": ["custom/spotify", "custom/weather", "battery", "pulseaudio"],
-    "modules-left": ["custom/launcher", "battery", "pulseaudio", "custom/spotify"],
+    "modules-left": ["custom/launcher", "battery", "pulseaudio", "custom/power-profiles",  "custom/spotify"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray", "clock", "network", "custom/power-profiles", "custom/power", "idle_inhibitor"],
+    "modules-right": ["tray", "clock", "network", "custom/power", "idle_inhibitor"],
     // "output": ["DP-2", "eDP-1"],
     "keyboard-state": {
         "numlock": true,
@@ -47,12 +47,12 @@
     "battery": {
         "states": {
             // "good": 95,
-            "warning": 30,
+            "warning": 20,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
-        "format-charging": "{icon} {capacity}%+",
-        "format-plugged": "{icon} {capacity}%+",
+        "format": "B: {capacity}%",
+        "format-charging": "B: {capacity}%+",
+        "format-plugged": "B: {capacity}%+",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
@@ -70,11 +70,11 @@
     },
     "pulseaudio": {
         "scroll-step": 5, // %, can be a float
-        "format": "{icon}  {volume}",
-        "format-bluetooth": "{icon}  {volume} (BT)",
+        "format": "V: {volume}",
+        "format-bluetooth": "V: {volume} (BT)",
         "format-bluetooth-muted": "MUTE (BT)",
         "format-muted": "MUTE",
-        "format-source": "{volume}% ",
+        "format-source": "V: {volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -111,7 +111,7 @@
     },
     "custom/power-profiles": {
 	"exec": "~/.config/waybar/get-power-profile.sh",
-        "format": "{}",
+        "format": "PP: {}",
 	"interval": 5,
         "on-click": "bash /home/jsmith/.config/wofi/wofi-power-profiles.sh",
         "tooltip-format": ""
