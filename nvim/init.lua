@@ -2,7 +2,7 @@ vim.cmd([[
 call plug#begin()
 
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'neovim/nvim-lspconfig'
 
 Plug 'nvim-lualine/lualine.nvim'
@@ -34,7 +34,7 @@ vim.opt.wrap=false
 vim.opt.termguicolors = true 
 
 vim.lsp.enable('ts_ls')
-vim.lsp.enable('angularls')
+-- vim.lsp.enable('angularls')
 vim.lsp.enable('csharp_ls')
 vim.lsp.enable('clangd')
 
@@ -69,7 +69,7 @@ vim.cmd([[
 --     },
 -- }
 
-require'nvim-treesitter.configs'.setup {
+require'nvim-treesitter'.setup {
   -- A list of parser names, or "all" (the listed parsers MUST always be installed)
   ensure_installed = { "c_sharp", "typescript", "html", "c" },
 
