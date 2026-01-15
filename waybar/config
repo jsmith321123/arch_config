@@ -1,12 +1,11 @@
 {
     "layer": "bottom", // Waybar at top layer
-    "height": 40, // Waybar height (to be removed for auto height)
-    "margin": "8 8 0 8",
+    "height": 36, // Waybar height (to be removed for auto height)
     // Choose the order of the modules
     //"modules-left": ["custom/spotify", "custom/weather", "battery", "pulseaudio"],
-    "modules-left": ["custom/launcher", "battery", "pulseaudio", "custom/power-profiles",  "custom/spotify"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray", "clock", "network", "custom/power", "idle_inhibitor"],
+    "modules-left": ["custom/launcher", "hyprland/workspaces", "battery", "pulseaudio", "custom/power-profiles",  "custom/spotify"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["tray", "custom/weather", "clock", "network", "custom/power", "idle_inhibitor"],
     // "output": ["DP-2", "eDP-1"],
     "keyboard-state": {
         "numlock": true,
@@ -28,6 +27,10 @@
         "all-outputs": true,
         "persistent_workspaces": {
         },
+    },
+    "hyprland/window": {
+      "icon": true
+
     },
     "tray": {
         "icon-size": 18,
@@ -95,7 +98,7 @@
         "max-length": 25
     },
     "custom/weather": {
-        "exec": "/usr/bin/python3 ~/.config/waybar/weather.py",
+        "exec": "python3 ~/.config/waybar/weather.py",
         "on-click": "xdg-open 'https://weather.metoffice.gov.uk/forecast/gcpu8321k#?nearestTo=Hampton%20Hill%20(Richmond%20upon%20Thames)&date=2025-05-02'",
         "format": "{}",
         "return-type": "json"
@@ -117,7 +120,7 @@
         "tooltip-format": ""
     },
     "custom/launcher": {
-	"on-click": "wofi --show drun",
+        "on-click": "ulauncher",
         "format": "󰀻",
         "tooltip-format": ""
     },

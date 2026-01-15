@@ -1,18 +1,17 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "Hasklug Nerd Font";
-    font-size: 18px;
+    font-size: 16px;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #4c566a;
     color: white;
     transition-property: background-color;
     transition-duration: .5s;
     padding: 0;
     padding-top: 2px;
     font-weight: bold;
-    border-radius: 8px;
 }
 
 .modules-left, .modules-right, .modules-center {
@@ -41,23 +40,21 @@ window#waybar.chromium {
 }
 
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each button name */
     border: none;
-    border-radius: 0;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+    background-color: #444444;
 }
 
 #workspaces button {
-    padding: 0 8px;
-    background-color: transparent;
+    padding: 0 4px;
     color: #ffffff;
+    border-top: solid 4px transparent;
+    border-bottom: solid 4px transparent;
+    border-radius: 0;
 }
 
 #workspaces button.empty {
@@ -67,8 +64,8 @@ button:hover {
 #workspaces button.active {
     font-weight: bold;
     /* background-color: rgba(255, 255, 255, 0.15); */
-    background-color: white;
-    color: #222222;
+    border-bottom: solid 4px #ffffff;
+    border-top: solid 4px transparent;
 }
 
 #workspaces button:hover {
@@ -138,27 +135,25 @@ button:hover {
 #custom-weather {
     color: #ffffff;
     /*background-color: #26A65B;*/
-    border-bottom: solid 4px white; 
-    border-top: solid 4px transparent;
     padding: 0 10px;
 }
 
 #custom-power {
-    color: #fc4747;
+    color: #bf616a;
     padding: 0 11px 0 7px;
 }
 
 #custom-power:hover {
     color: #222222;
-    background-color: #fc4747;
+    background-color: #bf616a;
     padding: 0 11px 0 7px;
 }
 
-#custom-power-profiles {
+#custom-power-profiles, #pulseaudio {
     padding: 0 7px 0 7px;
 }
 
-#custom-power-profiles:hover {
+#custom-power-profiles:hover, #pulseaudio:hover {
     color: #222222;
     background-color: #ffffff;
     padding: 0 7px 0 7px;
@@ -230,28 +225,25 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #222222;
-    padding-right: 13px;
+    background-color: #2e3440;
+    color: #8fbcbb;
+    padding-right: 12px;
     margin-right: 0;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
 }
 
 #custom-launcher {
-    background-color: #222222;
-    padding: 0 7px;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    margin-right: 5px;
+    background-color: #2e3440;
+    color: #8fbcbb;
+    padding: 0 9px 0 7px;
 }
 
 #custom-launcher:hover {
-    color: #222222;
-    background-color: white;
+    background-color: #8fbcbb;
+    color: #2e3440;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
+    background-color: #8fbcbb;
     color: #2d3436;
 }
 

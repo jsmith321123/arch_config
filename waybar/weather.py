@@ -14,10 +14,7 @@ async def getweather():
         sys.stdout.write("\n")
         sys.stdout.flush()
         sys.stdout.write(json.dumps({
-            "text": 
-                str(weather.temperature) + " " 
-                + weather.kind.emoji,
-                #+ weather.description,
+            "text": str(weather.temperature) + "° " + weather.description,
             "class": "custom-weather",
             "alt": "weather"
         }))
