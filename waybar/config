@@ -29,15 +29,16 @@
         },
     },
     "hyprland/window": {
-      "icon": true
-
+      "icon": true,
+      "icon-size": 20,
+      "max-length": 48
     },
     "tray": {
         "icon-size": 18,
         "spacing": 10
     },
     "clock": {
-        "format": "{:%a %d/%m %H:%M}",
+        "format": "{:%A %d/%m %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     },
     "cpu": {
@@ -54,12 +55,9 @@
             "critical": 15
         },
         "format": "B: {capacity}%",
+        "format-alt": "B: {capacity}%",
         "format-charging": "B: {capacity}%+",
         "format-plugged": "B: {capacity}%+",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -120,7 +118,7 @@
         "tooltip-format": ""
     },
     "custom/launcher": {
-        "on-click": "ulauncher",
+        "on-click": "ulauncher-toggle",
         "format": "󰀻",
         "tooltip-format": ""
     },
