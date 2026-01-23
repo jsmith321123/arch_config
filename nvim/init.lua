@@ -8,22 +8,14 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 
-Plug 'folke/tokyonight.nvim'
-
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 ]])
 
 vim.opt.colorcolumn="81"
-vim.wo.number=false
-vim.wo.relativenumber=false
-
-vim.cmd([[
-highlight ColorColumn ctermbg=8
-set signcolumn=yes
-set numberwidth=4
-]])
+vim.wo.number=true
+vim.wo.relativenumber=true
 
 vim.opt.tabstop=2
 vim.opt.shiftwidth=2
@@ -31,7 +23,7 @@ vim.opt.autoindent=true
 vim.opt.smartindent=true
 vim.opt.expandtab=true
 vim.opt.wrap=false
-vim.opt.termguicolors = true 
+vim.opt.termguicolors=true 
 
 vim.lsp.enable('ts_ls')
 -- vim.lsp.enable('angularls')
@@ -40,10 +32,6 @@ vim.lsp.enable('clangd')
 
 vim.api.nvim_set_keymap("n", "<C-P>", ":Telescope find_files<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-F>", ":Telescope live_grep<CR>", { noremap = true })
-
-vim.cmd([[
-  colorscheme tokyonight-storm
-]])
 
 -- require('lualine').setup {
 --     options = { 
@@ -68,6 +56,13 @@ vim.cmd([[
 --         lualine_z = {}
 --     },
 -- }
+
+vim.cmd([[
+colorscheme vim
+set signcolumn=yes
+set numberwidth=4
+highlight ColorColumn guibg=LightGray guifg=Black
+]])
 
 require'nvim-treesitter'.setup {
   -- A list of parser names, or "all" (the listed parsers MUST always be installed)
