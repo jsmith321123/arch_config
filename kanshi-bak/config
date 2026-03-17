@@ -1,0 +1,10 @@
+profile docked {
+    output "DP-2" enable position 0,0 scale 1.5 
+    output "DP-1" enable position 2560,-540 scale 1.5 transform 90
+    output "eDP-1" disable
+}
+
+profile undocked {
+    output "eDP-1" enable position 0,0 scale 1.8
+}
+

@@ -1,0 +1,126 @@
+{
+    "layer": "bottom", // Waybar at top layer
+    "height": 36, // Waybar height (to be removed for auto height)
+    // Choose the order of the modules
+    //"modules-left": ["custom/spotify", "custom/weather", "battery", "pulseaudio"],
+    "modules-left": ["custom/launcher", "hyprland/workspaces", "battery", "pulseaudio", "custom/power-profiles",  "custom/spotify"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["tray", "custom/weather", "clock", "network", "custom/power", "idle_inhibitor"],
+    // "output": ["DP-2", "eDP-1"],
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "persistent_workspaces": {
+        },
+    },
+    "hyprland/window": {
+      "icon": true,
+      "icon-size": 20,
+      "max-length": 48
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%A %d/%m %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " {}%"
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 20,
+            "critical": 15
+        },
+        "format": "B: {capacity}%",
+        "format-alt": "B: {capacity}%",
+        "format-charging": "B: {capacity}%+",
+        "format-plugged": "B: {capacity}%+",
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{icon}",
+        "format-ethernet": "󰈀",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "ETH",
+        "format-disconnected": "DIS",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"]
+    },
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        "format": "V: {volume}",
+        "format-bluetooth": "V: {volume} (BT)",
+        "format-bluetooth-muted": "MUTE (BT)",
+        "format-muted": "MUTE",
+        "format-source": "V: {volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/spotify": {
+        "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
+        "format": "{}",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "max-length": 25
+    },
+    "custom/weather": {
+        "exec": "python3 ~/.config/waybar/weather.py",
+        "on-click": "xdg-open 'https://weather.metoffice.gov.uk/forecast/gcpu8321k#?nearestTo=Hampton%20Hill%20(Richmond%20upon%20Thames)&date=2025-05-02'",
+        "format": "{}",
+        "return-type": "json"
+    },
+    "custom/email": {
+        "format": "󰇮",
+        "on-click": "hyprctl dispatch togglespecialworkspace email",
+    },
+    "custom/power": {
+        "format": "",
+        "on-click": "bash /home/jsmith/.config/wofi/wofi-power.sh",
+        "tooltip-format": ""
+    },
+    "custom/power-profiles": {
+	"exec": "~/.config/waybar/get-power-profile.sh",
+        "format": "PP: {}",
+	"interval": 5,
+        "on-click": "bash /home/jsmith/.config/wofi/wofi-power-profiles.sh",
+        "tooltip-format": ""
+    },
+    "custom/launcher": {
+        "on-click": "ulauncher-toggle",
+        "format": "󰀻",
+        "tooltip-format": ""
+    },
+}
+

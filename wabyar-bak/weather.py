@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import python_weather
 import asyncio
 import os
@@ -16,7 +14,7 @@ async def getweather():
         sys.stdout.write("\n")
         sys.stdout.flush()
         sys.stdout.write(json.dumps({
-            "text": weather.kind.emoji + " " + str(weather.temperature) + "°",
+            "text": str(weather.temperature) + "° " + weather.description,
             "class": "custom-weather",
             "alt": "weather"
         }))
