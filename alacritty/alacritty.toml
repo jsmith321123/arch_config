@@ -2,12 +2,12 @@
 import = ["/home/jsmith/.config/alacritty/themes/themes/tokyo_night_storm.toml"]    
 
 [font]
-size = 14.0 # 15" 
+size = 15.0 # 15" 
 #size = 20.0  # 24" 
 
 [font.normal]
-family = "Hasklug Nerd Font"
+family = "AdwaitaMono Nerd Font"
 
 [window]
-padding.x = 10
-padding.y = 10
+padding.x = 4
+padding.y = 4
