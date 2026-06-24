@@ -1,13 +1,31 @@
-Host dgdev_strapi_vm
-    User dgdev
-    HostName 172.187.186.81
+ServerAliveInterval 60
 
-Host kaizen-prod
-    User josh
-    HostName 172.16.75.12
-    IdentityFile ~/keys-n-configs/kaizen/kaizensshprivatekey3-josh.pem
+Host dgdev
+  User ubuntu
+  HostName vps-7d23ddb1.vps.ovh.net
+  Port 60022
 
-Host kaizen-staging
-    User josh
-    HostName 172.16.75.13
-    IdentityFile ~/keys-n-configs/kaizen/kaizensshprivatekey3-josh.pem
+Host dgdev-runner
+  User www-runner
+  HostName vps-7d23ddb1.vps.ovh.net
+  Port 60022
+  
+Host tvr-beta
+  User ubuntu
+  HostName vps-49fcdf9f.vps.ovh.net
+  Port 60022
+
+Host tvr-beta-runner
+  User www-runner
+  HostName vps-49fcdf9f.vps.ovh.net
+  Port 60022
+
+Host audiotag
+  User ubuntu
+  HostName vps-c29bac61.vps.ovh.net
+  Port 60022
+
+Host audiotag-runner
+  User www-runner
+  HostName vps-c29bac61.vps.ovh.net
+  Port 60022
