@@ -2,11 +2,11 @@
 import = ["/home/jsmith/.config/alacritty/themes/themes/alabaster_dark.toml"]    
 
 [font]
-size = 18.0 # 15" 
-#size = 20.0  # 24" 
+size = 19.0 # 15" 
 
 [font.normal]
-family = "AdwaitaMono Nerd Font"
+# family = "AdwaitaMono Nerd Font"
+family = "MesloLGS Nerd Font"
 style = "Bold"
 
 [window]
