@@ -1,13 +1,14 @@
 [general]
-import = ["/home/jsmith/.config/alacritty/themes/themes/tokyo_night_storm.toml"]    
+import = ["/home/jsmith/.config/alacritty/themes/themes/alabaster_dark.toml"]    
 
 [font]
-size = 15.0 # 15" 
+size = 18.0 # 15" 
 #size = 20.0  # 24" 
 
 [font.normal]
 family = "AdwaitaMono Nerd Font"
+style = "Bold"
 
 [window]
-padding.x = 4
-padding.y = 4
+padding.x = 10
+padding.y = 10

@@ -47,6 +47,7 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'folke/tokyonight.nvim'
 Plug 'mellow-theme/mellow.nvim'
 Plug 'morhetz/gruvbox'
+Plug 'dchinmay2/alabaster.nvim'
 
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -55,7 +56,7 @@ call plug#end()
 ]])
 
 vim.cmd([[
-colorscheme tokyonight-storm 
+colorscheme alabaster 
 
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
@@ -86,7 +87,7 @@ nmap <leader>rn <Plug>(coc-rename)
 
 require('lualine').setup {
     options = { 
-        theme = 'onedark', 
+        theme = 'alabaster', 
         section_separators = '',
         component_separators = '', 
     },
