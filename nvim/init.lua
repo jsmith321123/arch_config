@@ -1,7 +1,6 @@
 vim.opt.colorcolumn="80"
 vim.opt.textwidth=80
-vim.wo.number=true
-
+vim.wo.number=false
 
 vim.cmd([[
 highlight ColorColumn ctermbg=8
@@ -16,7 +15,7 @@ vim.opt.smartindent=true
 vim.opt.expandtab=true
 vim.opt.wrap=false
 vim.opt.termguicolors = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 vim.api.nvim_set_keymap("n", "<C-Left>", ":tabprev<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-Right>", ":tabnext<CR>", { noremap = true })
