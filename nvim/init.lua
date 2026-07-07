@@ -1,12 +1,5 @@
-vim.opt.colorcolumn="80"
 vim.opt.textwidth=80
 vim.wo.number=false
-
-vim.cmd([[
-highlight ColorColumn ctermbg=8
-set signcolumn=yes
-set numberwidth=4
-]])
 
 vim.opt.tabstop=2
 vim.opt.shiftwidth=2
@@ -14,7 +7,7 @@ vim.opt.autoindent=true
 vim.opt.smartindent=true
 vim.opt.expandtab=true
 vim.opt.wrap=false
-vim.opt.termguicolors = true
+vim.opt.termguicolors = true 
 vim.opt.relativenumber = false
 
 vim.cmd([[
@@ -60,23 +53,9 @@ vim.api.nvim_set_keymap("n", "<C-F>", ":Telescope live_grep<CR>", { noremap = tr
 vim.api.nvim_set_keymap("n", "<C-J>", ":lua vim.lsp.buf.code_action()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-K>", ":lua vim.lsp.buf.hover()<CR>", { noremap = true })
 
--- 
--- inoremap <silent><expr> <TAB>
---       \ coc#pum#visible() ? coc#pum#next(1) :
---       \ CheckBackspace() ? "\<Tab>" :
---       \ coc#refresh()
--- inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
--- 
--- inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
--- 
--- function! CheckBackspace() abort
---   let col = col('.') - 1
---   return !col || getline('.')[col - 1]  =~# '\s'
--- endfunction
 vim.cmd([[
-colorscheme alabaster 
+colorscheme lunaperche 
 ]])
-
 vim.api.nvim_set_hl(0, "Normal", { bg = "#222222" })
 
 require('lualine').setup {
