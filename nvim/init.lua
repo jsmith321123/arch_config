@@ -9,6 +9,7 @@ vim.opt.expandtab=true
 vim.opt.wrap=false
 vim.opt.termguicolors = true 
 vim.opt.relativenumber = false
+vim.opt.title = true
 
 vim.cmd([[
 call plug#begin()
