@@ -56,7 +56,7 @@ vim.api.nvim_set_keymap("n", "<C-K>", ":lua vim.lsp.buf.hover()<CR>", { noremap 
 vim.cmd([[
 colorscheme lunaperche 
 ]])
-vim.api.nvim_set_hl(0, "Normal", { bg = "#222222" })
+vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", ctermbg = "NONE" })
 
 require('lualine').setup {
     options = { 
