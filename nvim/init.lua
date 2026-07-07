@@ -33,6 +33,9 @@ Plug 'morhetz/gruvbox'
 Plug 'dchinmay2/alabaster.nvim'
 Plug 'tree-sitter/tree-sitter-c-sharp'
 
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+
 call plug#end()
 ]])
 
