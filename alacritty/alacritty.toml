@@ -1,5 +1,5 @@
 [font]
-size = 24.0 # 15" 
+size = 16.0 # 15" 
 
 [font.normal]
 # family = "AdwaitaMono Nerd Font"
@@ -9,6 +9,7 @@ style = "Regular"
 [window]
 padding.x = 10
 padding.y = 10
+dynamic_title = true
 
 [colors.primary]
 background = '#222222'
