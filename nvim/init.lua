@@ -7,7 +7,7 @@ vim.opt.autoindent=true
 vim.opt.smartindent=true
 vim.opt.expandtab=true
 vim.opt.wrap=false
-vim.opt.termguicolors = true 
+vim.opt.termguicolors = false
 vim.opt.relativenumber = false
 vim.opt.title = true
 
@@ -58,7 +58,7 @@ vim.api.nvim_set_keymap("n", "<C-J>", ":lua vim.lsp.buf.code_action()<CR>", { no
 vim.api.nvim_set_keymap("n", "<C-K>", ":lua vim.lsp.buf.hover()<CR>", { noremap = true })
 
 vim.cmd([[
-colorscheme koehler
+colorscheme nvim
 ]])
 -- vim.cmd([[
 -- colorscheme slate
