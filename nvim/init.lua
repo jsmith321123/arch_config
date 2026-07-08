@@ -57,12 +57,12 @@ vim.api.nvim_set_keymap("n", "<C-F>", ":Telescope live_grep<CR>", { noremap = tr
 vim.api.nvim_set_keymap("n", "<C-J>", ":lua vim.lsp.buf.code_action()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-K>", ":lua vim.lsp.buf.hover()<CR>", { noremap = true })
 
-vim.cmd([[
-colorscheme lunaperche 
-]])
 -- vim.cmd([[
--- colorscheme alabaster
+-- colorscheme lunaperche 
 -- ]])
+vim.cmd([[
+colorscheme alabaster
+]])
 vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", ctermbg = "NONE" })
 
 require('lualine').setup {
