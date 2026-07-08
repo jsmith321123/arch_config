@@ -6,6 +6,8 @@ family = "MesloLGS Nerd Font"
 style = "Regular"
 
 [window]
+dimensions.columns = 85
+dimensions.lines = 35
 padding.x = 10
 padding.y = 10
 dynamic_title = true
