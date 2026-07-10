@@ -1,16 +1,3 @@
-vim.opt.textwidth=80
-vim.wo.number=false
-
-vim.opt.tabstop=2
-vim.opt.shiftwidth=2
-vim.opt.autoindent=true
-vim.opt.smartindent=true
-vim.opt.expandtab=true
-vim.opt.wrap=false
-vim.opt.termguicolors = true
-vim.opt.relativenumber = false
-vim.opt.title = true
-
 vim.cmd([[
 call plug#begin()
 
@@ -42,12 +29,29 @@ Plug 'RRethy/base16-nvim'
 call plug#end()
 ]])
 
+vim.opt.textwidth=80
+vim.wo.number=false
+
+vim.opt.tabstop=2
+vim.opt.shiftwidth=2
+vim.opt.autoindent=true
+vim.opt.smartindent=true
+vim.opt.expandtab=true
+vim.opt.wrap=false
+vim.opt.termguicolors = true
+vim.opt.relativenumber = false
+vim.opt.title = true
+
+vim.cmd('colorscheme base16-0x96f')
+vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", ctermbg = "NONE" })
+vim.api.nvim_set_hl(0, "RedundantWhitespace", { bg = "Gray", ctermbg = "Gray" })
+vim.cmd([[match RedundantWhitespace /\s\+$\| \+\ze\t/]])
 
 -- LSP languages
 vim.lsp.enable('ts_ls');
 vim.lsp.enable('csharp_ls');
 vim.lsp.enable('clangd');
--- 
+--
 
 vim.api.nvim_set_keymap("n", "<C-Left>", ":tabprev<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-Right>", ":tabnext<CR>", { noremap = true })
@@ -67,19 +71,17 @@ vim.api.nvim_set_keymap("n", "<C-K>", ":lua vim.lsp.buf.hover()<CR>", { noremap 
 -- colorscheme slate
 -- ]])
 -- vim.cmd([[
--- colorscheme lunaperche 
+-- colorscheme lunaperche
 -- ]])
 -- vim.cmd([[
 -- colorscheme alabaster
 -- ]])
-vim.cmd('colorscheme base16-0x96f')
-vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", ctermbg = "NONE" })
 
 require('lualine').setup {
     options = { 
-        theme = 'base16', 
+        theme = 'base16',
         section_separators = '',
-        component_separators = '', 
+        component_separators = '',
     },
     sections = {
         lualine_a = {'mode'},
@@ -145,7 +147,7 @@ cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      vim.fn["vsnip#anvim redundant whitespace highlightnonymous"](args.body) -- For `vsnip` users.
     end,
   },
   window = {
